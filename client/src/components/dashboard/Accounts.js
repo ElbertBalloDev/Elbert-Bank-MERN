@@ -108,7 +108,7 @@ const Accounts = (props) => {
           }}
           plaidLinkProps={{
             clientName: "Elbert's Bank",
-            key: "021b2c2ece5e055fe3100f069ef651",
+            key: "Change_this_to_your_plaid_public_key",
             env: "sandbox",
             product: ["transactions"],
             onSuccess: handleOnSuccess,
