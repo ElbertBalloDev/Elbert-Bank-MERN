@@ -24,8 +24,8 @@ Our app will allow users to
 
 Please Change these files to work with the Plaid API and mongodb
 Server Side
-.env-example file 
-Change file name to .env and change your credentials for plaid to work
+routes > api > plaid
+Change change your credentials for plaid from line 10 - 12
 
 config > keys.js 
 On the keys.js file change the mongoURI to your connection string
