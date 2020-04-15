@@ -7,9 +7,9 @@ const mongoose = require("mongoose");
 // Load Account and User models
 const Account = require("../../models/Account");
 const User = require("../../models/User");
-const PLAID_CLIENT_ID = "5e90e819c2c21f001155804a";
-const PLAID_SECRET = "dab9e05082af95eb4c2846cbd57f9b";
-const PLAID_PUBLIC_KEY = "021b2c2ece5e055fe3100f069ef651";
+const PLAID_CLIENT_ID = process.env.PLAID_CLIENT_ID;          // Use your Plaid Client Key
+const PLAID_SECRET = process.env.PLAID_SECRET;                // Use your Plaid Secret Key
+const PLAID_PUBLIC_KEY = process.env.PLAID_PUBLIC_KEY;        // Use your Plaid Public Key
 const client = new plaid.Client(
   PLAID_CLIENT_ID,
   PLAID_SECRET,
