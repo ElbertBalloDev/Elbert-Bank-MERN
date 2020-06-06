@@ -12,9 +12,8 @@ const Login = (props) => {
   }
 
   const [state, setState] = useState(initialState);
-
   const auth = useSelector(state => state.auth);
-  const errors = useSelector(state => state.errors);   //const auth = useSelector(state => state.auth);
+  const errors = useSelector(state => state.errors);
   const dispatch = useDispatch();
   
   useEffect(() => {
@@ -23,8 +22,6 @@ const Login = (props) => {
     }
     dispatch({ type:CLEAR_ERRORS })
   }, [auth.isAuthenticated, dispatch, props.history])
-
-
 
   const onSubmit = e => {
      e.preventDefault();
