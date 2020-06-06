@@ -7,7 +7,6 @@ const Landing = (props) => {
   const auth = useSelector((state) => state.auth);
 
   useEffect(() => {
-    // If logged in and user navigates to Landing page, should redirect them to dashboard
     if (auth.isAuthenticated) {
       props.history.push("/dashboard");
     }
