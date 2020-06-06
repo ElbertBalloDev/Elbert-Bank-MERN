@@ -14,22 +14,15 @@ import PrivateRoute from './components/private-route/PrivateRoute';
 function App(props) {
   const dispatch = useDispatch();
   useEffect(() => {
-    // Check for token to keep user logged in
     if (localStorage.jwtToken) {
-      // Set auth token header auth
       const token = localStorage.jwtToken;
       setAuthToken(token);
   
-      // Decode token and get user info and exp
       const decoded = jwt_decode(token);
-      // Set user and isAuthenticated
       dispatch(setCurrentUser(decoded));
-      // Check for expired token
-      const currentTime = Date.now() / 1000; // to get in milliseconds
+      const currentTime = Date.now() / 1000;
       if (decoded.exp < currentTime) {
-        // Logout user
         dispatch(logoutUser());
-        // Redirect to login
         props.history.push("/login");
       }
     }
