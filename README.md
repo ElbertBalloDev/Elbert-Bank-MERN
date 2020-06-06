@@ -29,11 +29,3 @@ Change change your credentials for plaid from line 10 - 12
 
 config > keys.js 
 On the keys.js file change the mongoURI to your connection string
-
-Client Side
-Client > src > components > dashboard 
-In the Account.js: line 111 && Dashboard.js: line 61
-Change these to your plaid public strings
-
-This is currently running on sandbox mode if you want to move it to development mode 
-change the env to development on Account.js and Dashboard.js and use the development credentials
