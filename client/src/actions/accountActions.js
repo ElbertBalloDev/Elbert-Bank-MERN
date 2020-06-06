@@ -7,9 +7,8 @@ import {
   GET_TRANSACTIONS,
   TRANSACTIONS_LOADING
 } from "./types";
-// Actions will go here
  
-// Add account
+
 export const addAccount = plaidData => dispatch => {
   const accounts = plaidData.accounts;
   axios
@@ -26,7 +25,6 @@ export const addAccount = plaidData => dispatch => {
     .catch(err => console.log(err));
 };
 
-// Delete account
 export const deleteAccount = plaidData => dispatch => {
   if (window.confirm("Are you sure you want to remove this account?")) {
     const id = plaidData.id;
@@ -46,7 +44,6 @@ export const deleteAccount = plaidData => dispatch => {
   }
 };
 
-// Get all accounts for specific user
 export const getAccounts = () => dispatch => {
   dispatch(setAccountsLoading());
   axios
@@ -65,14 +62,12 @@ export const getAccounts = () => dispatch => {
     );
 };
 
-// Accounts loading
 export const setAccountsLoading = () => {
   return {
     type: ACCOUNTS_LOADING
   };
 };
 
-// Get Transactions
 export const getTransactions = plaidData => dispatch => {
   dispatch(setTransactionsLoading());
   axios
@@ -90,7 +85,7 @@ export const getTransactions = plaidData => dispatch => {
           })
       );
 };
-// Transactions loading
+
 export const setTransactionsLoading = () => {
   return {
       type: TRANSACTIONS_LOADING
