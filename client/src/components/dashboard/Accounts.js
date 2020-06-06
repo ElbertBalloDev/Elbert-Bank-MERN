@@ -18,7 +18,6 @@ const Accounts = (props) => {
     dispatch(getTransactions(props.accounts));
   }, [props.accounts, dispatch]);
 
-  // Add account
   const handleOnSuccess = (token, metadata) => {
     const { accounts } = props;
     const plaidData = {
@@ -29,7 +28,6 @@ const Accounts = (props) => {
     dispatch(addAccount(plaidData));
   };
 
-  // Delete account
   const onDeleteClick = (id) => {
     const { accounts } = props;
     const accountData = {
@@ -39,7 +37,6 @@ const Accounts = (props) => {
     dispatch(deleteAccount(accountData));
   };
 
-  // Logout
   const onLogoutClick = (e) => {
     e.preventDefault();
     dispatch(logoutUser());
@@ -114,8 +111,7 @@ const Accounts = (props) => {
             onSuccess: handleOnSuccess,
           }}
             //env: "development", switch with this if you want to use development mode on line 61
-          onScriptLoad={() => setState({ loaded: true })}
-        >
+          onScriptLoad={() => setState({ loaded: true })} >
           Add Account
         </PlaidLinkButton>
         <hr style={{ marginTop: "2rem", opacity: ".2" }} />
